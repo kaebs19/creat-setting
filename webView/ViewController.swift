@@ -6,12 +6,23 @@
 //
 
 import UIKit
+import WebKit
 
 class ViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var webView: WKWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        looadWebView()
+
+    }
+    
+    func looadWebView() {
+        guard let url = URL(string: "https://www.halmanhaj.com/quiz/leaderboard.php")  else {return}
+        
+        webView.load(URLRequest(url: url))
     }
 
 
